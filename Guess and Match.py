@@ -74,7 +74,7 @@ def GuessLetter2():
     return letter2_position-1
 
 def replay():
-
+    board = ['~'] * 20
     return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
 
 
@@ -114,7 +114,7 @@ while game_on == True:
     Mixer(letters1, letters2)
 
     ### Uncomment this to show the answer
-    #cheat()
+    cheat()
 
     while tries > 0 and remainder !=0:
     
