@@ -1,5 +1,4 @@
 ### Guess and Match Game
-### The objective of the game is to guess the positions of the matching pair
 
 import random
 
@@ -14,10 +13,10 @@ def game_board(board):
 
 
 def Tries():
-    
+
     tries = 0
     options = range(1,11)
-    
+
     while tries not in options:
         try:
             tries = int(input('How many tries would you like? [1-10] '))
@@ -35,19 +34,19 @@ def Tries():
                 print(f'You have {tries} try to win the game\n')
             else:
                 print(f'You have {tries} tries to win the game\n')
-            
+
     return tries
 
 def Mixer(letters1,letters2):
-    
+
     random.shuffle(letters1)
     random.shuffle(letters2)
 
 def GuessLetter1():
-    
+
     letter1_position = 0
     guess_options = range(1,len(letters1)+1)
-    
+
     while letter1_position not in guess_options:
         try:
             letter1_position = int(input(f'What is your guess for the LETTER 1 POSITION?(1-{guess_options[-1]}) '))
@@ -59,10 +58,10 @@ def GuessLetter1():
     return letter1_position-1
 
 def GuessLetter2():
-    
+
     letter2_position = 0
     guess_options = range(1,len(letters2)+1)
-    
+
     while letter2_position not in guess_options:
         try:
             letter2_position = int(input(f'What is your guess for the LETTER 2 POSITION?(1-{guess_options[-1]}) '))
@@ -114,10 +113,10 @@ while game_on == True:
     Mixer(letters1, letters2)
 
     ### Uncomment this to show the answer
-    cheat()
+    # cheat()
 
     while tries > 0 and remainder !=0:
-    
+
         LetterGuess1 = GuessLetter1()
         LetterGuess2 = GuessLetter2()
 
@@ -133,7 +132,7 @@ while game_on == True:
                 board[LetterGuess2+10] = letters2[LetterGuess2]
 
                 game_board(board)
-            
+
         else:
             print('\nNo Match\n')
             game_board(board)
